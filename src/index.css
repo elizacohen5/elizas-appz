@@ -20,3 +20,9 @@ code {
 .active {
   color: white
 }
+
+.logo {
+  height: 25px;
+  margin-top: 7px;
+}
+
