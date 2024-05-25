@@ -1,0 +1,139 @@
+{
+  "applications": [
+    {
+      "id": 1,
+      "application date": "April 20, 2024",
+      "job title": "Junior Software Engineer",
+      "company": "Google",
+      "company logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png",
+      "status": "interviewing",
+      "contact": {
+        "name": "Sundar Pichai",
+        "email": "sundar@google.com"
+      },
+      "interviews": [
+        {
+          "round": 1,
+          "date": "April 23, 2024"
+        },
+        {
+          "round": 2,
+          "date": "April 24, 2024"
+        },
+        {
+          "round": 3,
+          "date": null
+        }
+      ],
+      "accepted": false
+    },
+    {
+        "id": 2,
+        "application date": "April 21, 2024",
+        "job title": "Software Engineer I",
+        "company": "Microsoft",
+        "company logo": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RWCZER?ver=1433&q=90&m=6&h=195&w=348&b=%23FFFFFFFF&l=f&o=t&aim=true",
+        "status": "application sent",
+        "contact": {
+          "name": "Satya Nadella",
+          "email": "satya@microsoft.com"
+        },
+        "interviews": [
+          {
+            "round": 1,
+            "date": null
+          },
+          {
+            "round": 2,
+            "date": null
+          },
+          {
+            "round": 3,
+            "date": null
+          }
+        ],
+        "accepted": false
+    },
+    {
+        "id": 3,
+        "application date": "April 22, 2024",
+        "job title": "Software Engineer",
+        "company": "Salesforce",
+        "company logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1024px-Salesforce.com_logo.svg.png",
+        "status": "interviewing",
+        "contact": {
+          "name": "Marc Benioff",
+          "email": "marc@salesforce.com"
+        },
+        "interviews": [
+          {
+            "round": 1,
+            "date": "April 26, 2024"
+          },
+          {
+            "round": null,
+            "date": null
+          },
+          {
+            "round": null,
+            "date": null
+          }
+        ],
+        "accepted": false
+    },
+    {
+        "id": 4,
+        "application date": "April 23, 2024",
+        "job title": "Web Developer",
+        "company": "Meta",
+        "company logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png",
+        "status": "interviewing",
+        "contact": {
+          "name": "Mark Zuckerberg",
+          "email": "mark@meta.com"
+        },
+        "interviews": [
+          {
+            "round": 1,
+            "date": "April 28, 2024"
+          },
+          {
+            "round": 2,
+            "date": "April 29, 2024"
+          },
+          {
+            "round": null,
+            "date": null
+          }
+        ],
+        "accepted": false
+    },
+    {
+        "id": 5,
+        "application date": "April 24, 2024",
+        "job title": "Junior Software Engineer",
+        "company": "Bloomberg",
+        "company logo": "https://1000logos.net/wp-content/uploads/2023/01/Bloomberg-logo.png",
+        "status": "interviewing",
+        "contact": {
+          "name": "Vlad Kliatchko",
+          "email": "vlad@meta.com"
+        },
+        "interviews": [
+          {
+            "round": 1,
+            "date": "April 26, 2024"
+          },
+          {
+            "round": 2,
+            "date": null
+          },
+          {
+            "round": null,
+            "date": null
+          }
+        ],
+        "accepted": false
+    }
+  ]
+}
