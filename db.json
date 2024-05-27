@@ -19,10 +19,6 @@
         {
           "round": 2,
           "date": "April 24, 2024"
-        },
-        {
-          "round": 3,
-          "date": null
         }
       ],
       "accepted": false
@@ -38,20 +34,7 @@
         "name": "Satya Nadella",
         "email": "satya@microsoft.com"
       },
-      "interviews": [
-        {
-          "round": 1,
-          "date": null
-        },
-        {
-          "round": 2,
-          "date": null
-        },
-        {
-          "round": 3,
-          "date": null
-        }
-      ],
+      "interviews": [],
       "accepted": false
     },
     {
@@ -69,14 +52,6 @@
         {
           "round": 1,
           "date": "April 26, 2024"
-        },
-        {
-          "round": null,
-          "date": null
-        },
-        {
-          "round": null,
-          "date": null
         }
       ],
       "accepted": false
@@ -100,10 +75,6 @@
         {
           "round": 2,
           "date": "April 29, 2024"
-        },
-        {
-          "round": null,
-          "date": null
         }
       ],
       "accepted": false
@@ -123,20 +94,12 @@
         {
           "round": 1,
           "date": "April 26, 2024"
-        },
-        {
-          "round": 2,
-          "date": null
-        },
-        {
-          "round": null,
-          "date": null
         }
       ],
       "accepted": false
     },
     {
-      "id": "6eba",
+      "id": "2f82",
       "applicationDate": "May 27, 2024",
       "jobTitle": "Software Engineer",
       "company": "Netflix",
@@ -149,20 +112,21 @@
       "interviews": [
         {
           "round": "1",
-          "date": "2024-05-27T19:40:47.012Z",
-          "id": "7a32a4e8-aa61-49e2-b3e2-65b8b7d48b4d"
+          "date": "2024-05-28T19:51:32.000Z",
+          "id": "5450fed5-0734-41af-8f9a-c2e9b44faff8"
         },
         {
           "round": "2",
-          "date": "2024-05-27T19:42:06.542Z",
-          "id": "3915cc58-4205-4406-a017-94e923f1780f"
+          "date": "2024-05-29T19:53:47.000Z",
+          "id": "d967f6e4-f968-4c05-867b-e2b38a944782"
         },
         {
           "round": "3",
-          "date": "2024-05-27T19:42:12.692Z",
-          "id": "4750cddb-5ed0-4e26-ba39-5eee072fcd26"
+          "date": "2024-05-31T19:53:52.000Z",
+          "id": "eea59367-37cb-4ef3-bdea-fa05d6bd41ed"
         }
-      ]
+      ],
+      "accepted": false
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import { v4 as uuidv4 } from 'uuid';
-import { Link } from "react-router-dom";
 import { MenuItem } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -83,6 +83,8 @@ function Form() {
     });
   }
 
+  const navigate = useNavigate();
+
   function handleSubmit(event) {
     console.log("hi");
     event.preventDefault();
@@ -98,7 +100,7 @@ function Form() {
       }),
     })
       .then((r) => r.json())
-      .then((interview) => console.log(interview));
+      .then(() => navigate("/"));
   }
 
   const applicationStatusOptions = [
@@ -200,7 +202,7 @@ function Form() {
                     label="Interview Date"
                     name="date"
                     value={interview.date}
-                    onChange={(newValue) => handleInterviewDateChange(interview.round, newValue)}
+                    onChange={(newValue) => handleInterviewDateChange(interview.id, newValue)}
                     sx={{ m: 0.5, width: "40%" }}
                   />
                 </LocalizationProvider>
@@ -210,7 +212,7 @@ function Form() {
         </div>
 
         <Button
-          variant="contained"
+          variant="text"
           onClick={handleAddInterviewButtonClick}
           sx={{
             marginBottom: "30px",
@@ -219,7 +221,7 @@ function Form() {
             marginTop: "20px",
           }}
         >
-          Add New{" "}
+         <Typography fontWeight="bold"> + Add New{" "} </Typography>
         </Button>
         <Typography
           color="252d3b"
