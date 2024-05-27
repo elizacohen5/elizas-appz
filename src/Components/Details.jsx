@@ -68,19 +68,35 @@ function Details() {
         </Typography>
 
         {(app.interviews || []).map((interview) => {
-            const formattedDate = dayjs(interview?.date).format("MMM D, YYYY");
-            console.log(formattedDate);
-            return (
-              <Typography
-                variant="h6"
-                color="black"
-                gutterBottom
-                sx={{ textAlign: "auto" }}
-              >
-                {`Round ${interview?.round}: ${formattedDate}`}
-              </Typography>
-            );
-          })}
+          const formattedDate = dayjs(interview?.date).format("MMM D, YYYY");
+          console.log(formattedDate);
+          return (
+            <Typography
+              variant="h6"
+              color="black"
+              gutterBottom
+              sx={{ textAlign: "auto" }}
+            >
+              {`Round ${interview?.round}: ${formattedDate}`}
+            </Typography>
+          );
+        })}
+        <Typography
+          variant="h6"
+          color="black"
+          gutterBottom
+          sx={{ textAlign: "auto", marginTop: "30px" }}
+        >
+          Contact Information:
+        </Typography>
+        <Typography
+          variant="h6"
+          color="black"
+          gutterBottom
+          sx={{ textAlign: "auto", marginTop: "10px" }}
+        >
+          {app?.contact?.name}: <a href="mailto:{app.contact.email}">{app?.contact?.email}</a>
+        </Typography>
       </Box>
     </>
   );
