@@ -1,7 +1,7 @@
 {
   "applications": [
     {
-      "id": 1,
+      "id": "1",
       "applicationDate": "April 20, 2024",
       "jobTitle": "Junior Software Engineer",
       "company": "Google",
@@ -28,112 +28,141 @@
       "accepted": false
     },
     {
-        "id": 2,
-        "applicationDate": "April 21, 2024",
-        "jobTitle": "Software Engineer I",
-        "company": "Microsoft",
-        "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png",
-        "status": "Application Sent",
-        "contact": {
-          "name": "Satya Nadella",
-          "email": "satya@microsoft.com"
+      "id": "2",
+      "applicationDate": "April 21, 2024",
+      "jobTitle": "Software Engineer I",
+      "company": "Microsoft",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png",
+      "status": "Application Sent",
+      "contact": {
+        "name": "Satya Nadella",
+        "email": "satya@microsoft.com"
+      },
+      "interviews": [
+        {
+          "round": 1,
+          "date": null
         },
-        "interviews": [
-          {
-            "round": 1,
-            "date": null
-          },
-          {
-            "round": 2,
-            "date": null
-          },
-          {
-            "round": 3,
-            "date": null
-          }
-        ],
-        "accepted": false
+        {
+          "round": 2,
+          "date": null
+        },
+        {
+          "round": 3,
+          "date": null
+        }
+      ],
+      "accepted": false
     },
     {
-        "id": 3,
-        "applicationDate": "April 22, 2024",
-        "jobTitle": "Software Engineer",
-        "company": "Salesforce",
-        "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1024px-Salesforce.com_logo.svg.png",
-        "status": "Interviewing",
-        "contact": {
-          "name": "Marc Benioff",
-          "email": "marc@salesforce.com"
+      "id": "3",
+      "applicationDate": "April 22, 2024",
+      "jobTitle": "Software Engineer",
+      "company": "Salesforce",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1024px-Salesforce.com_logo.svg.png",
+      "status": "Interviewing",
+      "contact": {
+        "name": "Marc Benioff",
+        "email": "marc@salesforce.com"
+      },
+      "interviews": [
+        {
+          "round": 1,
+          "date": "April 26, 2024"
         },
-        "interviews": [
-          {
-            "round": 1,
-            "date": "April 26, 2024"
-          },
-          {
-            "round": null,
-            "date": null
-          },
-          {
-            "round": null,
-            "date": null
-          }
-        ],
-        "accepted": false
+        {
+          "round": null,
+          "date": null
+        },
+        {
+          "round": null,
+          "date": null
+        }
+      ],
+      "accepted": false
     },
     {
-        "id": 4,
-        "applicationDate": "April 23, 2024",
-        "jobTitle": "Web Developer",
-        "company": "Meta",
-        "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-        "status": "Interviewing",
-        "contact": {
-          "name": "Mark Zuckerberg",
-          "email": "mark@meta.com"
+      "id": "4",
+      "applicationDate": "April 23, 2024",
+      "jobTitle": "Web Developer",
+      "company": "Meta",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+      "status": "Interviewing",
+      "contact": {
+        "name": "Mark Zuckerberg",
+        "email": "mark@meta.com"
+      },
+      "interviews": [
+        {
+          "round": 1,
+          "date": "April 28, 2024"
         },
-        "interviews": [
-          {
-            "round": 1,
-            "date": "April 28, 2024"
-          },
-          {
-            "round": 2,
-            "date": "April 29, 2024"
-          },
-          {
-            "round": null,
-            "date": null
-          }
-        ],
-        "accepted": false
+        {
+          "round": 2,
+          "date": "April 29, 2024"
+        },
+        {
+          "round": null,
+          "date": null
+        }
+      ],
+      "accepted": false
     },
     {
-        "id": 5,
-        "applicationDate": "April 24, 2024",
-        "jobTitle": "Junior Software Engineer",
-        "company": "Bloomberg",
-        "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/1024px-New_Bloomberg_Logo.svg.png",
-        "status": "Interviewing",
-        "contact": {
-          "name": "Vlad Kliatchko",
-          "email": "vlad@meta.com"
+      "id": "5",
+      "applicationDate": "April 24, 2024",
+      "jobTitle": "Junior Software Engineer",
+      "company": "Bloomberg",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/New_Bloomberg_Logo.svg/1024px-New_Bloomberg_Logo.svg.png",
+      "status": "Interviewing",
+      "contact": {
+        "name": "Vlad Kliatchko",
+        "email": "vlad@meta.com"
+      },
+      "interviews": [
+        {
+          "round": 1,
+          "date": "April 26, 2024"
         },
-        "interviews": [
-          {
-            "round": 1,
-            "date": "April 26, 2024"
-          },
-          {
-            "round": 2,
-            "date": null
-          },
-          {
-            "round": null,
-            "date": null
-          }
-        ],
-        "accepted": false
+        {
+          "round": 2,
+          "date": null
+        },
+        {
+          "round": null,
+          "date": null
+        }
+      ],
+      "accepted": false
+    },
+    {
+      "id": "6eba",
+      "applicationDate": "May 27, 2024",
+      "jobTitle": "Software Engineer",
+      "company": "Netflix",
+      "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
+      "status": "Interviewing",
+      "contact": {
+        "name": "Eliza Cohen",
+        "email": "elizacohen5@gmail.com"
+      },
+      "interviews": [
+        {
+          "round": "1",
+          "date": "2024-05-27T19:40:47.012Z",
+          "id": "7a32a4e8-aa61-49e2-b3e2-65b8b7d48b4d"
+        },
+        {
+          "round": "2",
+          "date": "2024-05-27T19:42:06.542Z",
+          "id": "3915cc58-4205-4406-a017-94e923f1780f"
+        },
+        {
+          "round": "3",
+          "date": "2024-05-27T19:42:12.692Z",
+          "id": "4750cddb-5ed0-4e26-ba39-5eee072fcd26"
+        }
+      ]
     }
   ]
 }

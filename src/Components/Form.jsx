@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import dayjs from "dayjs";
+import { v4 as uuidv4 } from 'uuid';
+import { Link } from "react-router-dom";
 import { MenuItem } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -9,54 +12,100 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import Button from "@mui/material/Button";
 
 function Form() {
-  const [interviewForm, setInterviewForm] = useState([
-    <TextField
-      key="interview-number-0"
-      id="interview-number-0"
-      label="Interview No."
-      variant="outlined"
-      sx={{ m: 0.5, width: "40%" }}
-    />,
-    <LocalizationProvider key="interview-date-0" dateAdapter={AdapterDayjs}>
-      <DatePicker label="Interview Date" sx={{ m: 0.5, width: "40%" }} />
-    </LocalizationProvider>,
-  ]);
-  const [applicationStatus, setApplicationStatus] = useState("");
+  const [formData, setFormData] = useState({
+    applicationDate: "",
+    jobTitle: "",
+    company: "",
+    companyLogo: "",
+    status: "",
+    contact: {
+      name: "",
+      email: "",
+    },
+    interviews: [{ round: "", date: dayjs(), id: uuidv4() }],
+  });
+
+  function handleChange(event) {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  function handleContactChange(event) {
+    setFormData({
+      ...formData,
+      contact: {
+        ...formData.contact,
+        [event.target.name]: event.target.value,
+      },
+    });
+  }
+
+  function handleInterviewRoundChange(event) {
+    console.log(event.target.value);
+    setFormData({
+      ...formData,
+      interviews: formData.interviews.map((interview) => {
+        if (event.target.id !== interview.id) {
+          return interview;
+        } else {
+          return {
+            ...interview,
+            round: event.target.value,
+          };
+        }
+      }),
+    });
+  }
+
+  function handleInterviewDateChange(id, value) {
+    console.log(value);
+    setFormData({
+      ...formData,
+      interviews: formData.interviews.map((interview) => {
+        if (id !== interview.id) {
+          return interview;
+        } else {
+          return {
+            ...interview,
+            date: value,
+          };
+        }
+      }),
+    });
+  }
 
   function handleAddInterviewButtonClick() {
-    const newInterviewForm = interviewForm.concat([
-      <TextField
-        key={`interview-number-${interviewForm.length}`}
-        id={`interview-number-${interviewForm.length}`}
-        label="Interview No."
-        variant="outlined"
-        sx={{ m: 0.5, width: "40%" }}
-      />,
-      <LocalizationProvider
-        key={`interview-date-${interviewForm.length}`}
-        dateAdapter={AdapterDayjs}
-      >
-        <DatePicker label="Interview Date" sx={{ m: 0.5, width: "40%" }} />
-      </LocalizationProvider>,
-    ]);
-    setInterviewForm(newInterviewForm);
+    setFormData({
+      ...formData,
+      interviews: [...formData.interviews, { round: "", date: dayjs(), id: uuidv4() }],
+    });
+  }
+
+  function handleSubmit(event) {
+    console.log("hi");
+    event.preventDefault();
+    fetch("http://localhost:8000/applications", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        applicationDate: dayjs().format("MMM D, YYYY"),
+        accepted: false
+      }),
+    })
+      .then((r) => r.json())
+      .then((interview) => console.log(interview));
   }
 
   const applicationStatusOptions = [
-    {
-      value: "Application Sent",
-    },
-    {
-      value: "Interviewing",
-    },
-    {
-      value: "Application Closed",
-    },
+    { value: "Application Sent" },
+    { value: "Interviewing" },
+    { value: "Application Closed" },
   ];
-
-  const handleApplicationStatusChange = (event) => {
-    setApplicationStatus(event.target.value);
-  };
 
   return (
     <>
@@ -80,90 +129,132 @@ function Form() {
         >
           New Application
         </Typography>
-        <Box
-          component="form" /* This is a form. Add submit event listener here */
-          autoComplete="off"
+        <TextField
+          id="company-name"
+          label="Company Name"
+          variant="outlined"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          sx={{ m: 0.5, width: "40%" }}
+        />
+        <TextField
+          id="job-title"
+          label="Job Title"
+          variant="outlined"
+          name="jobTitle"
+          value={formData.jobTitle}
+          onChange={handleChange}
+          sx={{ m: 0.5, width: "40%" }}
+        />
+        <TextField
+          id="company-logo"
+          label="Company Logo"
+          variant="outlined"
+          name="companyLogo"
+          value={formData.companyLogo}
+          onChange={handleChange}
+          sx={{ m: 0.5, width: "40%" }}
+        />
+        <TextField
+          id="application-status"
+          select
+          label="Application Status"
+          variant="outlined"
+          name="status"
+          value={formData.status}
+          onChange={handleChange}
+          sx={{ m: 0.5, width: "40%" }}
         >
-          <TextField
-            id="company-name"
-            label="Company Name"
-            variant="outlined"
-            sx={{ m: 0.5, width: "40%" }}
-          />
-          <TextField
-            id="job-title"
-            label="Job Title"
-            variant="outlined"
-            sx={{ m: 0.5, width: "40%" }}
-          />
-          <TextField
-            id="company-logo"
-            label="Company Logo"
-            variant="outlined"
-            sx={{ m: 0.5, width: "40%" }}
-          />
-          <TextField
-            id="application-status"
-            select
-            label="Application Status"
-            variant="outlined"
-            value={applicationStatus}
-            onChange={handleApplicationStatusChange}
-            sx={{ m: 0.5, width: "40%" }}
-          >
-            {applicationStatusOptions.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.value}
-              </MenuItem>
-            ))}
-          </TextField>
-          <Typography
-            color="252d3b"
-            gutterBottom
-            variant="h6"
-            sx={{ paddingTop: "20px" }}
-          >
-            {" "}
-            Interviews{" "}
-          </Typography>
+          {applicationStatusOptions.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.value}
+            </MenuItem>
+          ))}
+        </TextField>
+        <Typography
+          color="252d3b"
+          gutterBottom
+          variant="h6"
+          sx={{ paddingTop: "20px" }}
+        >
+          {" "}
+          Interviews{" "}
+        </Typography>
 
-          <div id="interview-rows">{interviewForm}</div>
+        <div id="interview-rows">
+          {formData.interviews.map((interview) => {
+            return (
+              <Box key={interview.id}>
+                <TextField
+                  id={interview.id}
+                  label="Interview No."
+                  variant="outlined"
+                  name="round"
+                  value={interview.round}
+                  onChange={handleInterviewRoundChange}
+                  sx={{ m: 0.5, width: "40%" }}
+                />
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker
+                    label="Interview Date"
+                    name="date"
+                    value={interview.date}
+                    onChange={(newValue) => handleInterviewDateChange(interview.round, newValue)}
+                    sx={{ m: 0.5, width: "40%" }}
+                  />
+                </LocalizationProvider>
+              </Box>
+            );
+          })}
+        </div>
 
-          <Button
-            variant="contained"
-            onClick={handleAddInterviewButtonClick}
-            sx={{
-              marginBottom: "30px",
-              marginLeft: "50px",
-              marginRight: "50px",
-              marginTop: "20px",
-            }}
-          >
-            Add New{" "}
-          </Button>
-          <Typography
-            color="252d3b"
-            gutterBottom
-            variant="h6"
-            sx={{ paddingTop: "20px" }}
-          >
-            {" "}
-            Contact Information{" "}
-          </Typography>
-          <TextField
-            id="contact-name"
-            label="Name"
-            variant="outlined"
-            sx={{ m: 0.5, width: "40%" }}
-          />
-          <TextField
-            id="contact-phone-number"
-            label="Phone Number"
-            variant="outlined"
-            sx={{ m: 0.5, width: "40%", marginBottom: "40px" }}
-          />
-        </Box>
-        <Button variant="contained" sx={{ marginBottom: "40px" }}>
+        <Button
+          variant="contained"
+          onClick={handleAddInterviewButtonClick}
+          sx={{
+            marginBottom: "30px",
+            marginLeft: "50px",
+            marginRight: "50px",
+            marginTop: "20px",
+          }}
+        >
+          Add New{" "}
+        </Button>
+        <Typography
+          color="252d3b"
+          gutterBottom
+          variant="h6"
+          sx={{ paddingTop: "20px" }}
+        >
+          {" "}
+          Contact Information{" "}
+        </Typography>
+        <TextField
+          id="contact-name"
+          label="Name"
+          variant="outlined"
+          name="name"
+          value={formData.contact.name}
+          onChange={handleContactChange}
+          sx={{ m: 0.5, width: "40%" }}
+        />
+        <TextField
+          id="contact-email"
+          label="Email"
+          variant="outlined"
+          name="email"
+          value={formData.contact.email}
+          onChange={handleContactChange}
+          sx={{ m: 0.5, width: "40%", marginBottom: "40px" }}
+        />
+
+        <Button
+          variant="contained"
+          sx={{ marginBottom: "40px" }}
+          type="submit"
+          onClick={handleSubmit}
+        >
           Submit Application
         </Button>
       </Box>
