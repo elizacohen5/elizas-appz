@@ -17,9 +17,7 @@ const routes = [
         element: <Form />,
       },
       {
-        // This is eventually going to be a dynamic route, appending the id for each application
-        // can reference the react-router canvas lesson for implementation
-        path: "/details",
+        path: "/details/:id",
         element: <Details />,
       },
     ],

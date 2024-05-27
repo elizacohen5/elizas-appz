@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -28,10 +28,11 @@ function Home() {
             borderRadius: 2,
             textAlign: "center",
             margin: "auto",
-            marginTop: "30px"
+            marginTop: "30px",
+            backgroundColor: "white"
           }}
         >
-          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+          <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{textAlign: "left", marginLeft: "10px"}} >
             Recent Applications
           </Typography>
           <Table size="small">
@@ -53,22 +54,21 @@ function Home() {
             </TableHead>
             <TableBody>
               {apps.map((app) => (
-                <TableRow key={app.id}>
+                <TableRow className="app-row" key={app.id}>
                   <TableCell className="img-cell">
+                    <Link to={`/details/${app.id}`} className="table-link">
                     <img className="logo" alt="company-logo" src={app.companyLogo}></img>
+                    </Link>
                   </TableCell>
-                  <TableCell>{app.applicationDate}</TableCell>
-                  <TableCell>{app.jobTitle}</TableCell>
-                  <TableCell>{app.status}</TableCell>
+                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.applicationDate}</Link></TableCell>
+                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.jobTitle}</Link></TableCell>
+                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.status}</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </Box>
       </React.Fragment>
-      {/* dynamically link each list item to the details page for that item. Use the 
-            Canvas react-router lesson for help */}
-      <NavLink to="/details">Details</NavLink>
     </>
   );
 }
