@@ -69,7 +69,6 @@ function Details() {
 
         {(app.interviews || []).map((interview) => {
           const formattedDate = dayjs(interview?.date).format("MMM D, YYYY");
-          console.log(formattedDate);
           return (
             <Typography
               variant="h6"

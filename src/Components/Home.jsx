@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import AppChart from "./AppChart";
 import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -16,10 +17,25 @@ function Home() {
       .then((r) => r.json())
       .then((apps) => setApps(apps));
   }, []);
-  console.log(apps);
 
   return (
     <>
+      <Box
+        sx={{
+          boxShadow: 2,
+          width: "90%",
+          borderRadius: 2,
+          textAlign: "center",
+          margin: "auto",
+          marginTop: "30px",
+          backgroundColor: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <AppChart apps={apps} />
+      </Box>
       <React.Fragment>
         <Box
           sx={{
@@ -29,10 +45,17 @@ function Home() {
             textAlign: "center",
             margin: "auto",
             marginTop: "30px",
-            backgroundColor: "white"
+            backgroundColor: "white",
+            flexShrink: "0"
           }}
         >
-          <Typography component="h2" variant="h6" color="primary" gutterBottom sx={{textAlign: "left", marginLeft: "10px"}} >
+          <Typography
+            component="h2"
+            variant="h6"
+            color="primary"
+            gutterBottom
+            sx={{ textAlign: "left", marginLeft: "10px" }}
+          >
             Recent Applications
           </Typography>
           <Table size="small">
@@ -57,12 +80,31 @@ function Home() {
                 <TableRow className="app-row" key={app.id}>
                   <TableCell className="img-cell">
                     <Link to={`/details/${app.id}`} className="table-link">
-                    <img className="logo" alt="company-logo" src={app.companyLogo}></img>
+                      <img
+                        className="logo"
+                        alt="company-logo"
+                        src={app.companyLogo}
+                      ></img>
                     </Link>
                   </TableCell>
-                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.applicationDate}</Link></TableCell>
-                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.jobTitle}</Link></TableCell>
-                  <TableCell> <Link to={`/details/${app.id}`} className="table-link">{app.status}</Link></TableCell>
+                  <TableCell>
+                    {" "}
+                    <Link to={`/details/${app.id}`} className="table-link">
+                      {app.applicationDate}
+                    </Link>
+                  </TableCell>
+                  <TableCell>
+                    {" "}
+                    <Link to={`/details/${app.id}`} className="table-link">
+                      {app.jobTitle}
+                    </Link>
+                  </TableCell>
+                  <TableCell>
+                    {" "}
+                    <Link to={`/details/${app.id}`} className="table-link">
+                      {app.status}
+                    </Link>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

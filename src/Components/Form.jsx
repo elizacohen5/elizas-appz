@@ -253,7 +253,7 @@ function Form() {
 
         <Button
           variant="contained"
-          sx={{ marginBottom: "40px" }}
+          sx={{ marginBottom: "40px", marginLeft: "35%", marginRight: "35%" }}
           type="submit"
           onClick={handleSubmit}
         >

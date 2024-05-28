@@ -6,7 +6,7 @@
       "jobTitle": "Junior Software Engineer",
       "company": "Google",
       "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png",
-      "status": "Interviewing",
+      "status": "Application Sent",
       "contact": {
         "name": "Sundar Pichai",
         "email": "sundar@google.com"
@@ -124,6 +124,31 @@
           "round": "3",
           "date": "2024-05-31T19:53:52.000Z",
           "id": "eea59367-37cb-4ef3-bdea-fa05d6bd41ed"
+        }
+      ],
+      "accepted": false
+    },
+    {
+      "id": "8505",
+      "applicationDate": "May 28, 2024",
+      "jobTitle": "Junior Developer",
+      "company": "Amazon",
+      "companyLogo": "https://images.crowdspring.com/blog/wp-content/uploads/2023/07/03162944/amazon-logo-1.png",
+      "status": "Application Closed",
+      "contact": {
+        "name": "Jeff Bezos",
+        "email": "jeff@amazon.com"
+      },
+      "interviews": [
+        {
+          "round": "1",
+          "date": "2024-05-22T16:28:58.000Z",
+          "id": "0573c849-2e8c-4376-9c85-f19714075871"
+        },
+        {
+          "round": "2",
+          "date": "2024-05-28T16:29:23.000Z",
+          "id": "43b95ca9-e511-4ceb-8410-7b01e9e44acc"
         }
       ],
       "accepted": false
