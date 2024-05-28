@@ -43,7 +43,6 @@ function Form() {
   }
 
   function handleInterviewRoundChange(event) {
-    console.log(event.target.value);
     setFormData({
       ...formData,
       interviews: formData.interviews.map((interview) => {
@@ -60,7 +59,6 @@ function Form() {
   }
 
   function handleInterviewDateChange(id, value) {
-    console.log(value);
     setFormData({
       ...formData,
       interviews: formData.interviews.map((interview) => {

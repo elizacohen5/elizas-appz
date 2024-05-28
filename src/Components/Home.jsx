@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppChart from "./AppChart";
+import StatusDropDown from "./StatusDropDown";
 import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -51,34 +52,37 @@ function Home() {
         >
           <Typography
             component="h2"
-            variant="h6"
+            variant="h5"
             color="primary"
             gutterBottom
-            sx={{ textAlign: "left", marginLeft: "10px" }}
+            sx={{ marginLeft: "10px", paddingTop: "20px", paddingBottom: "10px" }}
           >
             Recent Applications
           </Typography>
           <Table size="small">
             <TableHead>
-              <TableRow>
-                <TableCell>
+              <TableRow >
+                <TableCell sx={{textAlign: "center"}}>
                   <strong>Company</strong>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{textAlign: "center"}}>
                   <strong>Date Applied</strong>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{textAlign: "center"}}>
                   <strong>Job Title</strong>
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{textAlign: "center"}}>
                   <strong>Status</strong>
+                </TableCell>
+                <TableCell sx={{textAlign: "center"}}>
+                <strong>Delete</strong>
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {apps.map((app) => (
                 <TableRow className="app-row" key={app.id}>
-                  <TableCell className="img-cell">
+                  <TableCell className="img-cell" sx={{textAlign: "center"}}>
                     <Link to={`/details/${app.id}`} className="table-link">
                       <img
                         className="logo"
@@ -87,23 +91,27 @@ function Home() {
                       ></img>
                     </Link>
                   </TableCell>
-                  <TableCell>
+                  <TableCell sx={{textAlign: "center"}}>
                     {" "}
                     <Link to={`/details/${app.id}`} className="table-link">
                       {app.applicationDate}
                     </Link>
                   </TableCell>
-                  <TableCell>
+                  <TableCell sx={{textAlign: "center"}}>
                     {" "}
                     <Link to={`/details/${app.id}`} className="table-link">
                       {app.jobTitle}
                     </Link>
                   </TableCell>
-                  <TableCell>
+                  <TableCell sx={{textAlign: "center"}}>
                     {" "}
-                    <Link to={`/details/${app.id}`} className="table-link">
-                      {app.status}
-                    </Link>
+                      <StatusDropDown app={app} apps={apps} setApps={setApps} />
+                  </TableCell>
+                  <TableCell sx={{textAlign: "center"}}>
+                    {" "}
+                 
+                      delete
+                    
                   </TableCell>
                 </TableRow>
               ))}

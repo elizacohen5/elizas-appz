@@ -6,7 +6,7 @@
       "jobTitle": "Junior Software Engineer",
       "company": "Google",
       "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png",
-      "status": "Application Sent",
+      "status": "Interviewing",
       "contact": {
         "name": "Sundar Pichai",
         "email": "sundar@google.com"
@@ -29,7 +29,7 @@
       "jobTitle": "Software Engineer I",
       "company": "Microsoft",
       "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png",
-      "status": "Application Sent",
+      "status": "Application Closed",
       "contact": {
         "name": "Satya Nadella",
         "email": "satya@microsoft.com"
@@ -43,7 +43,7 @@
       "jobTitle": "Software Engineer",
       "company": "Salesforce",
       "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1024px-Salesforce.com_logo.svg.png",
-      "status": "Interviewing",
+      "status": "Application Sent",
       "contact": {
         "name": "Marc Benioff",
         "email": "marc@salesforce.com"
@@ -104,7 +104,7 @@
       "jobTitle": "Software Engineer",
       "company": "Netflix",
       "companyLogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
-      "status": "Interviewing",
+      "status": "Application Closed",
       "contact": {
         "name": "Eliza Cohen",
         "email": "elizacohen5@gmail.com"
@@ -149,6 +149,26 @@
           "round": "2",
           "date": "2024-05-28T16:29:23.000Z",
           "id": "43b95ca9-e511-4ceb-8410-7b01e9e44acc"
+        }
+      ],
+      "accepted": false
+    },
+    {
+      "id": "6843",
+      "applicationDate": "May 28, 2024",
+      "jobTitle": "Web Developer",
+      "company": "Github",
+      "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHyWp6EGwy3_zRBG283TbBSyPeU4byviEejA&s",
+      "status": "Interviewing",
+      "contact": {
+        "name": " Thomas Dohmke",
+        "email": "Tom@github.com"
+      },
+      "interviews": [
+        {
+          "round": "1",
+          "date": "2024-05-30T19:07:57.000Z",
+          "id": "f58ceb61-69e8-4cf0-a0b7-fbe3c69abd36"
         }
       ],
       "accepted": false

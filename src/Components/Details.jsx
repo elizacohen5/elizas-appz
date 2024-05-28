@@ -73,6 +73,7 @@ function Details() {
             <Typography
               variant="h6"
               color="black"
+              key={interview.date}
               gutterBottom
               sx={{ textAlign: "auto" }}
             >
