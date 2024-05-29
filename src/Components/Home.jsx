@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppChart from "./AppChart";
 import StatusDropDown from "./StatusDropDown";
+import DeleteApp from "./DeleteApp";
 import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -21,6 +22,7 @@ function Home() {
 
   return (
     <>
+
       <Box
         sx={{
           boxShadow: 2,
@@ -75,7 +77,7 @@ function Home() {
                   <strong>Status</strong>
                 </TableCell>
                 <TableCell sx={{textAlign: "center"}}>
-                <strong>Delete</strong>
+                <strong>Remove</strong>
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -109,9 +111,7 @@ function Home() {
                   </TableCell>
                   <TableCell sx={{textAlign: "center"}}>
                     {" "}
-                 
-                      delete
-                    
+                     <DeleteApp />
                   </TableCell>
                 </TableRow>
               ))}
@@ -119,6 +119,7 @@ function Home() {
           </Table>
         </Box>
       </React.Fragment>
+ 
     </>
   );
 }

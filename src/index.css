@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(238, 237, 237);
+  background-color: rgb(220, 219, 220);
 }
 
 body {
@@ -33,6 +33,10 @@ code {
 
 .app-row:hover {
   background-color: rgb(118, 206, 224);
+}
+
+.delete-icon:hover {
+  cursor: pointer;
 }
 
 .logo {

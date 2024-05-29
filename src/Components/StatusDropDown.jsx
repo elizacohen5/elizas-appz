@@ -42,6 +42,7 @@ function StatusDropDown({ apps, app, setApps }) {
       label="Application Status"
       variant="outlined"
       name="status"
+      size="small"
       value={app.status}
       sx={{ m: 0.5, width: "80%", backgroundColor: "ButtonHighlight" }}
     >
