@@ -111,7 +111,7 @@ function Home() {
                   </TableCell>
                   <TableCell sx={{textAlign: "center"}}>
                     {" "}
-                     <DeleteApp />
+                     <DeleteApp app={app} apps={apps} setApps={setApps} />
                   </TableCell>
                 </TableRow>
               ))}
