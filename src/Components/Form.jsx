@@ -84,7 +84,6 @@ function Form() {
   const navigate = useNavigate();
 
   function handleSubmit(event) {
-    console.log("hi");
     event.preventDefault();
     fetch("http://localhost:8000/applications", {
       method: "POST",
