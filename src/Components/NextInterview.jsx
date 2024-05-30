@@ -27,7 +27,6 @@ function NextInterview({ apps }) {
       upcomingInterview = interviews[i];
     }
   }
-  console.log(upcomingInterview)
 
   return (
     <Card
